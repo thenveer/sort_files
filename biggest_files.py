@@ -4,11 +4,8 @@ def order_by_size(file_list):
     def fsize(f):
         return os.stat(f).st_size
     file_list.sort(key=fsize)
-    files_list=[]
-    for i in range(5):
-        a= (file_list[i])
-        files_list.append(a)
-    return files_list
+    files=file_list[-5:]
+    return files
 def list_of_file(d):
     files=[]
     for i in os.listdir(d):
@@ -22,4 +19,4 @@ if __name__ == "__main__":
     
     n= order_by_size(l)
     print(n)
-    
+  
